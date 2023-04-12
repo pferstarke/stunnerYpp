@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Carousel</title>
+        <style>
+            .carousel img {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>My Carousel</h1>
+        <div class="carousel">
+            <img alt="First" src="https://placehold.co/350x200?text=1" />
+            <img alt="Second" src="https://placehold.co/350x200?text=2" />
+            <img alt="Third" src="https://placehold.co/350x200?text=3" />
+            <img alt="Fourth" src="https://placehold.co/350x200?text=4" />
+            <img alt="Fifth" src="https://placehold.co/350x200?text=5" />
+        </div>
+        <p><strong>If you were to use third-party tools to complete this challenge, what would you use? Write a sentence or two describing your reasoning.</strong></p>
+        <p>If I were to use a 3rd party tool to accomplish this task, it would be using React because it is the first thing I thought of when I saw the output and I also want to understand the hooks better.</p>
+        <script>
+        	// document.querySelector to access elements by its class
+            let carousel = document.querySelector('.carousel');
+
+            // document.querySelectorAll to access all the elements by its tags
+            let images = carousel.querySelectorAll('img');
+
+            // declared a variable to assign to each image and check what is the current image.
+            let index = 0;
+            
+
+            setInterval(() => {
+            	// to hide the current image
+                images[index].style.display = 'none';
+
+                // updates the index
+                index = (index + 1) % images.length;
+
+                // Shows the next image
+                images[index].style.display = 'block';
+            }, 1000);
+        </script>
+    </body>
+</html>
